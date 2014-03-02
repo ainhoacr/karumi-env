@@ -34,22 +34,56 @@
 <!-- MAIN CONTENT -->
 <div id="main_content_wrap" class="outer">
     <section id="main_content" class="inner">
-        <h3>
-            <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span
-                    class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
-        <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author
-            your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish.
-            After your page is generated, you can check out the new branch:</p>
+        <h3>What Is Karumi-Env and How it can help me?</h3>
 
-<pre><code>$ cd your_repo_root/repo_name
-    $ git fetch origin
-    $ git checkout gh-pages
-</code></pre>
+        <p>Karumi-Env is the web stack that we use at <a target="_blank" href="http://www.gokarumi.com/">Karumi</a> for
+            our own servers and client solutions. We use Amazon Web Services (AWS) and in particular Elastic Beanstalk
+            to setup.</p>
 
-        <p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+        <p>The baseline is operating system Amazon Linux AMI 2013.09.2 running Python 2.7 on top of Apache, we added
+            some feature on top and some modification.</p>
 
-        <table style="font-size: 12px;" border="0" cellpadding="0" cellspacing="0">
+        <h4>Pre-installed Packages</h4>
+
+        <ul>
+            <li>
+                <a target="_blank" href="http://sass-lang.com/">Sass</a> is a CSS extension language.
+            </li>
+            <li>
+                <a target="_blank" href="https://github.com/yui/yuglify">yUglify</a> is a wrapper around UglifyJS and
+                cssmin with the default YUI
+                configurations on each of them.
+            </li>
+            <li>
+                libxml2 and libxslt as requirements for <a target="_blank" href="http://lxml.de/">lxml</a>.
+            </li>
+            <li>
+                libmemcached, zlib, cyrus-sasl-lib as requirements for <a target="_blank"
+                                                                          href="http://sendapatch.se/projects/pylibmc/">pylibmc</a>.
+            </li>
+        </ul>
+
+        <h4>Apache Configuration Changes</h4>
+        <ul>
+            <li>
+                Activate deflate(compressed output) config for non-binary files.
+            </li>
+            <li>
+                Activate explicit expire headers.
+            </li>
+            <li>
+                HTTP authorisation headers are passed through to WSGI.
+            </li>
+        </ul>
+
+        <h3>How to setup Karumi-Env on your environment</h3>
+
+        <p>First you should be familiar with Elastic Beanstalk, if your are not, go to <a
+                href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html">AWS Elastic Beanstalk
+            Developer Guide</a> and check it out.</p>
+
+        <table style="font-size: 12px;" border="0">
             <tbody>
             <tr>
                 <td><strong>Region</strong></td>
@@ -60,9 +94,7 @@
                 <td><strong>HVM<br>EBS-Backed<br>64-bit</strong></td>
                 <td><strong>HVM<br>Instance Store<br>64-bit</strong></td>
                 <td><strong>HVM (GPU)<br>EBS-Backed<br>64-bit</strong></td>
-                <td><strong>HVM (<a
-                        href="http://aws.amazon.com/about-aws/whats-new/2013/11/04/announcing-new-amazon-ec2-gpu-instance-type/"
-                        title="G2 instance type">G2</a>)<br>EBS-Backed<br>64-bit</strong></td>
+                <td><strong>HVM (G2)<br>EBS-Backed<br>64-bit</strong></td>
             </tr>
             <tr>
                 <td>US East<br>N. Virginia</td>
@@ -96,7 +128,6 @@
             </tr>
             </tbody>
         </table>
-
     </section>
 </div>
 
