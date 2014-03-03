@@ -83,6 +83,36 @@
                 href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html">AWS Elastic Beanstalk
             Developer Guide</a> and check it out.</p>
 
+        <h4>Prerequisites</h4>
+
+        <ul>
+            <li>
+                An Elastic Beanstalk environment running Python 2.7 on 64bit Amazon Linux 2013.09.
+            </li>
+            <li>
+                Check your Current EC2 instances information: Virtualization(paravirtual or hvm), Root device type(ebs
+                or instance store).
+            </li>
+        </ul>
+
+        <h4>Setup</h4>
+
+        <ol>
+            <li>
+                Edit the Elastic Beanstalk environment configuration.
+            </li>
+            <li>
+                Click on the cog of instances settings, change the value of the Custom AMI ID field with the corresponding AMI id that you can find in table below; e.g., Virtualization: paravirtual and Root device type: ebs => PV EBS-Backed 64-bit.
+            </li>
+        </ol>
+
+        <p>If your region or combination Virtualization/Root Device type is not available, open us <a href="https://github.com/Karumi/karumi-env/issues">a ticket on github</a> or you can setup it yourself based on the running ami that your have in your current instances.</p>
+
+        <p>Current AMIs: based on <a target="_blank"
+                                     href="http://aws.amazon.com/amazon-linux-ami/2013.09-release-notes/">Amazon Linux
+            AMI 2013.09.2</a> with <a target="_blank" href="https://github.com/Karumi/karumi-env/tree/1.0">karumi-env
+            1.0</a></p>
+
         <table style="font-size: 12px;" border="0">
             <tbody>
             <tr>
