@@ -47,6 +47,10 @@ class karumi::server{
     require => Package["mysql"],
   }
 
+  package {'postgresql-devel':
+    ensure => '9.2-1.19.amzn1',
+  }
+
   #python
   class { 'python':
     dev        => true,
